@@ -10,7 +10,7 @@ For more examples and explanations, see the Using classes guide.
 
 Classes are in fact "special functions", and just as you can define function expressions and function declarations, a class can be defined in two ways: a class expression or a class declaration.
 
-JS
+```JS
 
 // Declaration
 class Rectangle {
@@ -35,6 +35,7 @@ this.height = height;
 this.width = width;
 }
 };
+```
 
 Like function expressions, class expressions may be anonymous, or have a name that's different from the variable that it's assigned to. However, unlike function declarations, class declarations have the same temporal dead zone restrictions as let or const and behave as if they are not hoisted.
 
@@ -80,7 +81,7 @@ A constructor can use the super keyword to call the constructor of the super cla
 
 You can create instance properties inside the constructor:
 
-JS
+```JS
 Copy to Clipboard
 class Rectangle {
 constructor(height, width) {
@@ -88,6 +89,8 @@ this.height = height;
 this.width = width;
 }
 }
+```
+
 Alternatively, if your instance properties' values do not depend on the constructor's arguments, you can define them as class fields.
 
 Static initialization blocks
@@ -95,10 +98,11 @@ Static initialization blocks allow flexible initialization of static properties,
 
 Multiple static blocks can be declared, and these can be interleaved with the declaration of static fields and methods (all static items are evaluated in declaration order).
 
-Methods
+### Methods
+
 Methods are defined on the prototype of each class instance and are shared by all instances. Methods can be plain functions, async functions, generator functions, or async generator functions. For more information, see method definitions.
 
-JS
+```JS
 Copy to Clipboard
 class Rectangle {
 constructor(height, width) {
@@ -125,3 +129,4 @@ const square = new Rectangle(10, 10);
 
 console.log(square.area); // 100
 console.log([...square.getSides()]); // [10, 10, 10, 10]
+```
